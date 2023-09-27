@@ -1,7 +1,6 @@
+import { getRedisToken } from '@chris-si/nestjs-redis';
+import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 import { Test, TestingModule } from '@nestjs/testing';
-import { NestFastifyApplication, FastifyAdapter } from '@nestjs/platform-fastify';
-import { getRedisToken } from '@liaoliaots/nestjs-redis';
-import { FastifyInstance } from 'fastify';
 import Redis from 'ioredis';
 import { AppModule } from '../src/app.module';
 import { CreateCatDto } from '../src/cats/create-cat.dto';
@@ -19,7 +18,7 @@ describe('CatsController (e2e)', () => {
     app = module.createNestApplication<NestFastifyApplication>(new FastifyAdapter());
 
     await app.init();
-    await (app.getHttpAdapter().getInstance() as FastifyInstance).ready();
+    await app.getHttpAdapter().getInstance().ready();
     await client.del('cats');
   });
 

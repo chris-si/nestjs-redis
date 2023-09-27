@@ -1,8 +1,8 @@
+import { getRedisToken } from '@chris-si/nestjs-redis';
 import { Test, TestingModule } from '@nestjs/testing';
-import { getRedisToken } from '@liaoliaots/nestjs-redis';
-import { CreateCatDto } from './create-cat.dto';
-import { CatsService } from './cats.service';
 import { Cat } from './cat';
+import { CatsService } from './cats.service';
+import { CreateCatDto } from './create-cat.dto';
 
 describe('CatsService', () => {
   let service: CatsService;

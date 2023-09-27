@@ -1,5 +1,5 @@
+import { RedisModule } from '@chris-si/nestjs-redis';
 import { Module } from '@nestjs/common';
-import { RedisModule } from '@liaoliaots/nestjs-redis';
 import { CatsModule } from './cats/cats.module';
 
 @Module({

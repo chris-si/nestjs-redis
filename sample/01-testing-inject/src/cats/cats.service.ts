@@ -1,5 +1,5 @@
+import { InjectRedis } from '@chris-si/nestjs-redis';
 import { Injectable } from '@nestjs/common';
-import { InjectRedis } from '@liaoliaots/nestjs-redis';
 import Redis from 'ioredis';
 import { Cat } from './cat';
 import { CreateCatDto } from './create-cat.dto';
